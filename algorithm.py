@@ -14,8 +14,22 @@ def read_array_from_file(filename):
     return array
 
 
-def sort_array(array): 
-    sorted_array = sorted(array)  
+# Use bubble sort method to sort elements in array
+def sort_array(array):
+    sorted_array = array[:]   # create copy of original .txt num_file so its not modified. w/o this the input_array and sorted_array are both sorted
+    indexing_length = len(sorted_array) - 1   # -1 b/c we cant perform a comparison on last num in list b/c there is no number after it
+    
+    # loop until sorted list becomes True    
+    sorted_list = False
+    while not sorted_list:
+        sorted_list = True
+
+        # once values are sorted, if statement won't run, sorted_list will remain true, and break out of while loop
+        for i in range(0, indexing_length):
+            if sorted_array[i] > sorted_array[i + 1]:   # if value on left > right
+                sorted_list = False
+                sorted_array[i], sorted_array[i + 1] = sorted_array[i + 1], sorted_array[i]   # swap numbers
+
     return sorted_array
 
 
@@ -63,8 +77,3 @@ print("Mean:", mean_value)
 print("Median:", median_value)
 print("Standard Deviation:", std_deviation_value)
 
-
-# figure out why LED is not fully illuminating
-# rewrite sort function 
-# understand stadard deviation
-# moved all this under a git project a share with Mustafa
