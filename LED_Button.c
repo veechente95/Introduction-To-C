@@ -19,10 +19,10 @@ int main(void) {
     while (1) {
         if (digitalRead(ButtonPin) == 0) {   //indicate that button has not been pressed down
             // Button is not pressed, turn off the LED
-            digitalWrite(LedPin, HIGH);
+            digitalWrite(LedPin, LOW);
         } else {
             // Button is pressed, turn on the LED
-            digitalWrite(LedPin, LOW);   // led on
+            digitalWrite(LedPin, HIGH);   // led on
         }
     }
 
