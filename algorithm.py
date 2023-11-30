@@ -64,7 +64,7 @@ def calculate_standard_deviation(array):
 
 
 # Example usage:
-filename = '/home/veechente/Desktop/Code/algorithm/num_file'
+filename = '/add/file/path/here/num_file'
 input_array = read_array_from_file(filename)
 sorted_array = sort_array(input_array)
 mean_value = calculate_mean(input_array)
