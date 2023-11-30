@@ -17,9 +17,12 @@ int main(void) {
     pullUpDnControl(ButtonPin, PUD_UP); // pull up to 3.3V, make GPIO1 a stable level
 
     while (1) {
-        digitalWrite(LedPin, HIGH);
-        if (digitalRead(ButtonPin) == 0) { // indicate that button has pressed down
-            digitalWrite(LedPin, LOW);    // led on
+        if (digitalRead(ButtonPin) == 0) {   //indicate that button has not been pressed down
+            // Button is not pressed, turn off the LED
+            digitalWrite(LedPin, HIGH);
+        } else {
+            // Button is pressed, turn on the LED
+            digitalWrite(LedPin, LOW);   // led on
         }
     }
 
